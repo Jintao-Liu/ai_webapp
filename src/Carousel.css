@@ -1,0 +1,86 @@
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    z-index: 0;
+  }
+  
+  .carousel-image.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  
+  .click-zone {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  .click-zone.left {
+    left: 0;
+  }
+  
+  .click-zone.right {
+    right: 0;
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    color: white;
+    z-index: 3;
+    text-align: left;
+  }
+  .carousel-caption {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .carousel-caption::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 50%);
+    z-index: -1;
+  }
+  .cta-button {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: dodgerblue;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
